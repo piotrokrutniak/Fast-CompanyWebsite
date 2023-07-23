@@ -28,7 +28,7 @@ export default function CarouselBase({ slides }) {
         <div className='w-full m-auto h-full max-w-7xl'> 
             <div className='w-full m-auto h-full max-w-7xl items-center flex group transition-all bg-black/30 relative' >
                 <div className='absolute w-full h-full select-none'>
-                    <Image src={slides[slideIndex].url} layout='fill' objectFit='cover' className='z-0 opacity-60'/>
+                    <Image src={slides[slideIndex].url} layout='fill' objectFit='cover' className='z-0 opacity-80'/>
                 </div>
                 <div className='flex w-full justify-between relative p-2'>
                 <div className='bg-black/10 p-2 rounded-2xl sm:hidden group-hover:block hover:bg-black/20 active:scale-95'>

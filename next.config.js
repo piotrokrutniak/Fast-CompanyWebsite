@@ -9,6 +9,6 @@ const nextConfig = {
 
 module.exports = {
   images: {
-    domains: ['localhost']
+    domains: ['localhost', 'media.graphassets.com']
   }
 }

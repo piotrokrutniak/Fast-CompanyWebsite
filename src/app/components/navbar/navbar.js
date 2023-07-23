@@ -6,7 +6,7 @@ import {BsList, BsXLg} from "react-icons/bs";
 import Link from "next/link";
 
 export default function Navbar(){
-    const [mobileOpen, setMobileOpen] = useState(true)
+    const [mobileOpen, setMobileOpen] = useState(false)
     
     return(
         <nav className="sticky bg-black top-0 w-full py-3 px-5 sm:px-3  z-50">
@@ -25,7 +25,7 @@ export default function Navbar(){
                     <Link href="/kontakt">
                         <ButtonBase text="Kontakt" color="bg-transparent" className="hover:bg-slate-400/25 text-white"  onClick={() => setMobileOpen(false)}/>
                     </Link>
-                    <Link href="/oferta">
+                    <Link href="/realizacje">
                         <ButtonBase text="Realizacje" color="bg-transparent" className="hover:bg-slate-400/25 text-white"  onClick={() => setMobileOpen(false)}/>
                     </Link>
                 </div>

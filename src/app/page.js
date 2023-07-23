@@ -10,7 +10,6 @@ import ac1 from "./media/img/air-conditioning-2.jpg"
 import ac2 from "./media/img/heat-pump-2.jpg"
 import ac3 from "./media/img/heating-2.jpg"
 import Link from 'next/link';
-//import imgs from '../../public/img/air-conditioning-2.jpg'
 
 
 export default function Home() {
@@ -21,6 +20,7 @@ export default function Home() {
     {url: ac3, desc:"Instalacje grzewcze"},
   ]
 
+
   return (
     <main className="min-h-screen">
       
@@ -30,13 +30,13 @@ export default function Home() {
         <div className='max-w-7xl m-auto flex gap-20 py-10 sm:py-32 align-middle h-full max-md:flex-col-reverse max-lg:gap-10'>
           <div className='w-96 h-96 shrink-0 bg-slate-500 rounded-xl relative self-center max-md:w-full overflow-clip'>
             <Image src={ac3} layout='fill' objectFit='cover'/>
-
-
           </div>
           <div className='relative self-center'>
             <div className='flex justify-between gap-5 max-lg:flex-col mb-5'>
               <h1 className='text-5xl font-semibold max-sm:text-3xl'>F.U.H FAST</h1>
-              <ButtonBase text="Skontaktuj się" color="black" icon={<BsSend/>} className="px-2 h-12 border-solid border-2 border-white/25 hover:border-white w-fit"/>
+              <Link href={"/kontakt"}>
+                <ButtonBase text="Skontaktuj się" color="black" icon={<BsSend/>} className="px-2 h-12 border-solid border-2 border-white/25 hover:border-white w-fit"/>
+              </Link>
             </div>
             <h2 className='text-xl font-thin leading-9 max-sm:text-lg'>Jesteśmy renomowaną firmą specjalizującą się w branży hydrauliki i instalacji sanitarnych. Oferujemy również usługi z zakresu klimatyzacji i wentylacji, w tym rekuperacji. Od 2006 roku działamy z sukcesami, co potwierdza nasz certyfikat Rzetelna Firma. Serdecznie zapraszamy do skorzystania z naszych profesjonalnych usług.</h2>
           </div>
@@ -48,7 +48,6 @@ export default function Home() {
           <div className='relative self-center'>
             <div className='flex justify-between max-lg:flex-col gap-5 mb-5'>
               <h1 className='text-5xl font-semibold max-sm:text-3xl'>Zdobyliśmy wasze zaufanie!</h1>
-              <ButtonBase text="Skontaktuj się" color="black" icon={<BsSend/>} className="px-2 h-12 border-solid border-2 border-white/25 hover:border-white w-fit"/>
             </div>
             <h2 className='text-xl font-thin leading-9 max-sm:text-lg'>Dzięki nieustannej etyce pracy i dbałości o jakość usług, firma została uhonorowana wieloma prestiżowymi nagrodami i wyróżnieniami. Wysiłki firmy w podnoszeniu standardów jakości oraz utrzymywaniu doskonałej etyki pracy zostały docenione przez renomowane organizacje, takie jak Firma Godna Zaufania czy Polski Orzeł Biznesu.</h2>
           </div>
