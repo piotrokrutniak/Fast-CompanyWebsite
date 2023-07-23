@@ -80,7 +80,7 @@ export default function Realizacje(){
         <main className="min-h-screen scroll-smooth">
             <section id="Realizacje" className="max-w-7xl m-auto lg:p-16">
                 <div>
-                    <h1 className="text-5xl font-semibold pb-8 border-b-2 border-slate-600/30">Realizacje</h1>
+                    <h1 className="text-5xl font-semibold p-5 pb-8 border-b-2 border-slate-600/30">Realizacje</h1>
                 </div>
                 {data.posts.map((x) => <CarouselPanel key={x.id} title={x.title} location={x.location} desc={x.description} photos={x.photos}/>)}
             </section>
