@@ -2,14 +2,15 @@
   "name": "fast",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://deploy.fast-klima.pl/",
   "scripts": {
-    "dev": "next dev",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "NODE_ENV=production node server.js"
   },
   "dependencies": {
     "autoprefixer": "10.4.14",
+    "electron": "^25.3.1",
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.10",
     "next": "13.4.10",
