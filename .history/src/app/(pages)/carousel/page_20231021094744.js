@@ -1,0 +1,19 @@
+import Image from "next/image"
+import p1 from "../../../../public/img/air-conditioning-2.jpg"
+import p2 from "../../../../public/img/heat-pump-2.jpg"
+import p3 from "../../../../public/img/heating-2.jpg"
+// import ac1 from "./media/img/air-conditioning-2.jpg"
+// import ac2 from "./media/img/heat-pump-2.jpg"
+// import ac3 from "./media/img/heating-2.jpg"
+
+export default function CarouselPage(){
+    return(
+        <div className="max-w-7xl mx-auto">
+            <div className="flex flex-row gap-5 h-128 relative w-full overflow-scroll">
+                <Image src={p1} layout='fill' objectFit='cover' className="w-full"/>
+                <Image src={p2} layout='fill' objectFit='cover' className="w-full"/>
+                <Image src={p3} layout='fill' objectFit='cover' className="w-full"/>
+            </div>
+        </div>
+    )
+}
