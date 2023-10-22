@@ -11,6 +11,8 @@ import ac2 from "./media/img/heat-pump-2.jpg"
 import ac3 from "./media/img/heating-2.jpg"
 import Link from 'next/link';
 import { CarouselSlider } from './components/common/carouselSlider';
+import { CarouselSliderBeta } from './components/common/carouselSliderBeta';
+
 
 export default function Home() {
 

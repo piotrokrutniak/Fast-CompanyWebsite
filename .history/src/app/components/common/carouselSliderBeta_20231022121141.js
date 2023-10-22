@@ -4,17 +4,8 @@ import { useEffect, useRef, useState } from "react"
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs"
 
 
-export function CarouselSlider({slides}){
+export function CarouselSliderBeta({slides}){
     const [activeIndex, setActiveIndex] = useState(0)
-    const [offsets, setOffsets] = useState([])
-    
-    useEffect(() => {
-      slides.map((slide, x) => {
-        offsets.push(`-translate-x-[${x*100}%]`);
-        console.log(offsets)
-      })
-    }, [])
-    
   
     function PrevSlide() {
       setActiveIndex(prevIndex => (prevIndex === 0 ? slides.length - 1 : prevIndex - 1))
@@ -61,9 +52,17 @@ export function CarouselSlider({slides}){
 
     return(
         <>
-        <div className="w-full max-w-7xl relative mx-auto overflow-clip group">
-        <div className={`relative w-full max-w-7xl h-128 flex overflow-visible transition-all`} style={{transform: `translateX(-${activeIndex * 100}%)`}}>
-            {slides.map((image, index) => <CarouselPanel image={image} key={index} index={index} />)}
+        <div className="w-full max-w-7xl relative mx-auto overflow-visible group">
+        <div className={`relative w-full max-w-7xl h-128 flex overflow-visible translate-x-[${activeIndex * 100}%] transition-all`}>
+          <div className={`w-full h-full absolute left-[0%]`}>
+              <Image src={slides[0].img} alt={slides[0].desc} layout='fill' objectFit='cover' className="h-full opacity-60"/>
+          </div>
+          <div className={`w-full h-full absolute left-[100%]`}>
+              <Image src={slides[0].img} alt={slides[0].desc} layout='fill' objectFit='cover' className="h-full opacity-60"/>
+          </div>
+          <div className={`w-full h-full absolute left-[200%]`}>
+              <Image src={slides[0].img} alt={slides[0].desc} layout='fill' objectFit='cover' className="h-full opacity-60"/>
+          </div>
         </div>
         <div className='flex w-full justify-between center top-0 h-full place-items-center absolute p-2'>
             <div className='bg-black/10 p-2 rounded-2xl sm:hidden group-hover:block hover:bg-black/20 active:scale-95'>
@@ -93,9 +92,9 @@ export function CarouselSlider({slides}){
 }
 
 function CarouselPanel({image, index}){
-    const offset = `left-[${index * 100}%]`
+    const offset = index * 100
     return (
-        <div className={`w-full h-full absolute ${offset}`}>
+        <div className={`w-full h-full absolute left-[${offset}%]`}>
             <Image src={image.img} alt={image.desc} layout='fill' objectFit='cover' className="h-full opacity-60"/>
         </div>
         ) 

@@ -6,15 +6,7 @@ import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs"
 
 export function CarouselSlider({slides}){
     const [activeIndex, setActiveIndex] = useState(0)
-    const [offsets, setOffsets] = useState([])
-    
-    useEffect(() => {
-      slides.map((slide, x) => {
-        offsets.push(`-translate-x-[${x*100}%]`);
-        console.log(offsets)
-      })
-    }, [])
-    
+    const [offset, setOffset] = useState(0)
   
     function PrevSlide() {
       setActiveIndex(prevIndex => (prevIndex === 0 ? slides.length - 1 : prevIndex - 1))
@@ -51,6 +43,7 @@ export function CarouselSlider({slides}){
       }, []);
   
       useEffect(() => {
+        setOffset(activeIndex * 100)
         resetTimer()
       }, [activeIndex])
   
@@ -62,7 +55,7 @@ export function CarouselSlider({slides}){
     return(
         <>
         <div className="w-full max-w-7xl relative mx-auto overflow-clip group">
-        <div className={`relative w-full max-w-7xl h-128 flex overflow-visible transition-all`} style={{transform: `translateX(-${activeIndex * 100}%)`}}>
+        <div className={`relative w-full max-w-7xl h-128 flex overflow-visible -translate-x-[${offset}%] transition-all`}>
             {slides.map((image, index) => <CarouselPanel image={image} key={index} index={index} />)}
         </div>
         <div className='flex w-full justify-between center top-0 h-full place-items-center absolute p-2'>
@@ -93,9 +86,9 @@ export function CarouselSlider({slides}){
 }
 
 function CarouselPanel({image, index}){
-    const offset = `left-[${index * 100}%]`
+    const offset = index * 100
     return (
-        <div className={`w-full h-full absolute ${offset}`}>
+        <div className={`w-full h-full absolute left-[${offset}%]`}>
             <Image src={image.img} alt={image.desc} layout='fill' objectFit='cover' className="h-full opacity-60"/>
         </div>
         ) 

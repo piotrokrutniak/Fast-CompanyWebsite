@@ -11,6 +11,8 @@ import ac2 from "./media/img/heat-pump-2.jpg"
 import ac3 from "./media/img/heating-2.jpg"
 import Link from 'next/link';
 import { CarouselSlider } from './components/common/carouselSlider';
+import { CarouselSliderBeta } from './components/common/carouselSliderBeta';
+
 
 export default function Home() {
 
@@ -23,6 +25,7 @@ export default function Home() {
   return (
     <>
     <CarouselSlider slides={slides}/>
+    <CarouselSliderBeta slides={slides}/>
     <main className="min-h-screen">
       <div className="z-10 w-full items-center justify-between text-sm lg:flex p-10 max-xs:p-5">
         <div className='max-w-7xl m-auto flex gap-20 py-10 sm:py-32 align-middle h-full max-md:flex-col-reverse max-lg:gap-10'>
