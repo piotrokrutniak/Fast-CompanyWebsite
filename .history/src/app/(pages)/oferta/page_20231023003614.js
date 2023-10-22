@@ -51,7 +51,7 @@ function Card({...props}){
 
 function ScrollTopButton(){
     return(
-        <Link href="#" >
+        <Link href="#navbar" >
             <ButtonBase text="Powrót do góry" color="black" icon={<BsArrowUpShort className="w-6 h-6"/>} className="px-2 h-12 border-solid border-2 border-white/25 hover:border-white w-fit"/>
         </Link>
     )
