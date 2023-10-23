@@ -92,6 +92,7 @@ export function CarouselSlider({slides}){
 }
 
 function CarouselPanel({image, index}){
+    const offset = `left-[${index * 100}%]`
     return (
         <div className={`w-full h-full absolute left-full`} style={{left: `${index * 100}%`}}>
             <Image src={image.img} alt={image.desc} layout='fill' objectFit='cover' className="h-full opacity-60"/>
